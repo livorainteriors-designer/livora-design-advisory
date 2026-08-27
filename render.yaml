@@ -1,0 +1,15 @@
+services:
+  # Python Web Service on Render
+  - type: web
+    name: livora-interiors-python
+    env: python
+    region: oregon
+    plan: free
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn wsgi:app --bind 0.0.0.0:$PORT"
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.8
+      - key: FLASK_ENV
+        value: production
+    healthCheckPath: /health

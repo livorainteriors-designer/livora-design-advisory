@@ -1,0 +1,8 @@
+"""
+Livora Interiors - WSGI Application Entry Point
+"""
+
+from app import app
+
+if __name__ == "__main__":
+    app.run()

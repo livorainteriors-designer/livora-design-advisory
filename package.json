@@ -1,0 +1,12 @@
+{
+  "name": "livora-interiors",
+  "version": "1.0.0",
+  "description": "Livora Interiors - Timeless Architecture & Freelance Interior Design Advisory by Bindhu",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve .",
+    "build": "echo 'Static assets ready for deployment'"
+  },
+  "author": "Bindhu (Livora Interiors)",
+  "license": "MIT"
+}

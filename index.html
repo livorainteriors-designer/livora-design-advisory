@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Livora Interiors | Timeless Architecture, Luxury Interiors & Freelance Design Advisory by Bindhu</title>
+  <meta name="description" content="Livora Interiors by Bindhu. Warm modernism, bespoke residential architecture, and 3D architectural visualization." />
+  
+  <!-- Google Fonts: Cormorant Garamond & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="assets/css/variables.css" />
+  <link rel="stylesheet" href="assets/css/global.css" />
+  <link rel="stylesheet" href="assets/css/components.css" />
+  <link rel="stylesheet" href="assets/css/pages.css" />
+</head>
+<body data-page="home">
+
+  <!-- Top Announcement Bar -->
+  <div class="top-bar">
+    <span>Bespoke Interior Architecture • Freelance Advisory by <strong>Bindhu</strong></span>
+  </div>
+
+  <!-- Luxury Navigation Header -->
+  <header class="site-header">
+    <div class="container header-container">
+      <a href="index.html" class="brand-logo">
+        <img src="assets/images/logo.png" alt="Livora Interiors Logo" />
+        <div>
+          <span class="brand-name">Livora</span>
+          <span class="brand-tagline">Interiors • Advisory</span>
+        </div>
+      </a>
+
+      <!-- Centered Desktop Menu -->
+      <nav class="nav-menu">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="portfolio.html" class="nav-link">Portfolio</a>
+        <a href="services.html" class="nav-link">Services & Advisory</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="btn btn-primary" data-open-modal="consultation">
+          <span>Book Advisory</span>
+        </button>
+      </div>
+
+      <button class="mobile-toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="drawer-overlay"></div>
+  <div class="mobile-nav-drawer">
+    <div>
+      <div class="drawer-header">
+        <span class="brand-name">Livora</span>
+        <button class="drawer-close" aria-label="Close menu">✕</button>
+      </div>
+      <div class="mobile-links">
+        <a href="index.html" class="mobile-link active">Home</a>
+        <a href="portfolio.html" class="mobile-link">Portfolio</a>
+        <a href="services.html" class="mobile-link">Services & Advisory</a>
+        <a href="about.html" class="mobile-link">About</a>
+        <a href="contact.html" class="mobile-link">Contact</a>
+      </div>
+    </div>
+    <div>
+      <button class="btn btn-gold" data-open-modal="consultation" style="width: 100%; margin-bottom: 1rem;">
+        <span>Book Advisory</span>
+      </button>
+      <div style="font-size: 0.8rem; color: var(--color-text-muted); text-align: center;">
+        livorainteriors.co@gmail.com
+      </div>
+    </div>
+  </div>
+
+  <!-- Work Showcase Interactive Carousel Section (Top Featured) -->
+  <section class="section-py section-bg-secondary" style="padding-top: 2.5rem; padding-bottom: 3.5rem;">
+    <div class="container">
+      <div class="section-header" style="margin-bottom: 2rem;">
+        <span class="subheading-editorial">Work Showcase</span>
+        <h2 class="heading-section">Featured Spatial Creations</h2>
+        <p>Swipe or click through a curated selection of Bindhu's recent interior architecture renders.</p>
+      </div>
+
+      <div id="work-samples-carousel-container">
+        <!-- Dynamically rendered by WorkCarousel.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Hero Section -->
+  <section class="home-hero" style="min-height: auto; padding-top: 3.5rem; padding-bottom: 4rem;">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-content animate-slide-up">
+          <div class="hero-advisor-badge">
+            <span>✨ Freelance Interior Architect & Design Advisor</span>
+          </div>
+          <h1 class="heading-display hero-title">
+            Spaces Designed with <em>Intention</em> & Warmth.
+          </h1>
+          <p class="hero-description">
+            Bespoke interiors crafted with organic modernism, refined textures, and 4K photorealistic spatial precision by <strong>Bindhu</strong>.
+          </p>
+          <div class="hero-actions">
+            <a href="portfolio.html" class="btn btn-primary">
+              <span>View Portfolio</span>
+            </a>
+            <button class="btn btn-secondary" id="hero-play-reel-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <polygon points="5 3 19 12 5 21 5 3"></polygon>
+              </svg>
+              <span>3D Reel</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="hero-visual-wrap animate-fade-in">
+          <div class="hero-main-image">
+            <img src="assets/images/1.png" alt="Livora Interiors Signature Space" />
+          </div>
+          <div class="hero-floating-card">
+            <div class="floating-stat-num">80+</div>
+            <div class="floating-stat-label">
+              Bespoke Spaces<br />Visualized in 4K
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dynamic Stats Ribbon -->
+  <section class="stats-ribbon">
+    <div class="container">
+      <div class="stats-grid" id="home-stats-grid">
+        <!-- Dynamically rendered by HomePage.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Philosophy Overview (Concise Editorial) -->
+  <section class="section-py">
+    <div class="container">
+      <div class="philosophy-split">
+        <div>
+          <span class="subheading-editorial">Design Approach</span>
+          <h2 class="heading-section" style="margin-bottom: 1.25rem;">
+            Organic Warmth Meets Architectural Depth
+          </h2>
+          <p class="text-lead" style="margin-bottom: 1.5rem;">
+            Inspired by Studio McGee, we combine oatmeal linen, natural timbers, sculpted plaster, and tailored daylight to create restorative sanctuaries.
+          </p>
+          <a href="about.html" class="btn-text">
+            <span>Learn More About Bindhu's Story →</span>
+          </a>
+        </div>
+
+        <div class="philosophy-image-grid">
+          <img src="assets/images/11.png" alt="Master Suite Detail" />
+          <img src="assets/images/2.png" alt="Lounge Interior" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Curated Project Grid -->
+  <section class="section-py section-bg-secondary">
+    <div class="container">
+      <div class="section-header">
+        <span class="subheading-editorial">Selected Works</span>
+        <h2 class="heading-section">Curated Gallery</h2>
+        <p>Explore our latest living lounges, master bedrooms, kitchens, and executive offices.</p>
+      </div>
+
+      <div class="projects-masonry-grid" id="featured-projects-grid">
+        <!-- Rendered dynamically by HomePage.js -->
+      </div>
+
+      <div style="text-align: center; margin-top: 3rem;">
+        <a href="portfolio.html" class="btn btn-primary">
+          <span>Explore All 60+ Projects</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Before & After -->
+  <section class="section-py">
+    <div class="container">
+      <div class="section-header">
+        <span class="subheading-editorial">3D Visualization</span>
+        <h2 class="heading-section">From Spatial Concept to 4K Realism</h2>
+        <p>Drag the slider to compare spatial planning against our finished 4K render.</p>
+      </div>
+
+      <div class="before-after-container" id="home-before-after">
+        <div class="before-image-wrapper">
+          <img src="assets/images/14.png" alt="Spatial Concept" />
+          <span class="slider-label before">Spatial Concept</span>
+        </div>
+        <img src="assets/images/11.png" alt="Photorealistic 4K" class="before-after-image" />
+        <span class="slider-label after">4K Photorealistic</span>
+        <div class="slider-handle">
+          <div class="slider-handle-button">‹ ›</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Freelance Advisory Spotlight -->
+  <section class="section-py-sm">
+    <div class="container">
+      <div class="advisory-highlight-banner">
+        <div>
+          <span class="subheading-editorial" style="color: var(--color-accent-gold);">Freelance Advisory</span>
+          <h2>Need Senior Design Guidance for Your Project?</h2>
+          <p>
+            Engage Bindhu for 1-on-1 virtual design sessions, floor plan optimizations, material palettes, and 3D visualization sprints.
+          </p>
+          <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+            <button class="btn btn-gold" data-open-modal="consultation">
+              <span>Book Consultation</span>
+            </button>
+            <a href="services.html" class="btn btn-outline-light">
+              <span>View Advisory Tiers</span>
+            </a>
+          </div>
+        </div>
+
+        <div style="border-radius: var(--radius-sm); overflow: hidden; box-shadow: var(--shadow-modal);">
+          <img src="assets/images/Enscape_2024-10-07-14-42-13.png" alt="Executive Workspace" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="section-py section-bg-secondary">
+    <div class="container">
+      <div class="section-header">
+        <span class="subheading-editorial">Client Stories</span>
+        <h2 class="heading-section">What Clients Say</h2>
+      </div>
+
+      <div class="values-grid" id="testimonials-grid">
+        <!-- Rendered dynamically by HomePage.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Instagram Grid -->
+  <section class="section-py-sm">
+    <div class="container">
+      <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 1.25rem; flex-wrap: wrap; gap: 1rem;">
+        <div>
+          <span class="subheading-editorial">Instagram</span>
+          <h2 style="font-size: 1.75rem;">@livorainteriors.co</h2>
+        </div>
+        <a href="https://instagram.com/livorainteriors.co" target="_blank" rel="noopener noreferrer" class="btn-text">
+          <span>Follow Us ↗</span>
+        </a>
+      </div>
+
+      <div class="insta-grid">
+        <a href="https://instagram.com/livorainteriors.co" target="_blank" class="insta-item">
+          <img src="assets/images/1.png" alt="Instagram Post" />
+        </a>
+        <a href="https://instagram.com/livorainteriors.co" target="_blank" class="insta-item">
+          <img src="assets/images/11.png" alt="Instagram Post" />
+        </a>
+        <a href="https://instagram.com/livorainteriors.co" target="_blank" class="insta-item">
+          <img src="assets/images/71.png" alt="Instagram Post" />
+        </a>
+        <a href="https://instagram.com/livorainteriors.co" target="_blank" class="insta-item">
+          <img src="assets/images/Enscape_2024-10-07-14-42-13.png" alt="Instagram Post" />
+        </a>
+        <a href="https://instagram.com/livorainteriors.co" target="_blank" class="insta-item">
+          <img src="assets/images/116.png" alt="Instagram Post" />
+        </a>
+        <a href="https://instagram.com/livorainteriors.co" target="_blank" class="insta-item">
+          <img src="assets/images/2.png" alt="Instagram Post" />
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+            <img src="assets/images/logo.png" alt="Livora Interiors" style="height: 44px; width: auto;" />
+            <h3 style="margin: 0; font-size: 1.6rem;">Livora Interiors</h3>
+          </div>
+          <p>
+            Bespoke interior architecture, freelance design advisory, and photorealistic 3D spatial curation led by <strong>Bindhu</strong>.
+          </p>
+          <div style="margin-top: 1.25rem;">
+            <a href="https://instagram.com/livorainteriors.co" target="_blank" style="color: var(--color-accent-gold); font-size: 0.85rem; font-weight: 600;">
+              Instagram: @livorainteriors.co
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Navigation</h4>
+          <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="services.html">Services & Advisory</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Expertise</h4>
+          <div class="footer-links">
+            <a href="services.html">Freelance Advisory</a>
+            <a href="services.html">3D Photorealism</a>
+            <a href="services.html">Residential Design</a>
+            <a href="services.html">Executive Cabins</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Direct Inquiry</h4>
+          <p style="font-size: 0.875rem; color: var(--color-text-light-muted); margin-bottom: 1rem;">
+            livorainteriors.co@gmail.com
+          </p>
+          <button class="btn btn-gold" data-open-modal="consultation" style="width: 100%;">
+            <span>Book Advisory</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          © <span id="current-year">2026</span> Livora Interiors. Designer: Bindhu.
+        </div>
+        <div>
+          Studio McGee Inspired • Powered by Python & Modular POM
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Advisor Button -->
+  <button class="floating-advisor-btn" data-open-modal="consultation" aria-label="Chat with Advisor">
+    <div class="status-dot"></div>
+    <span>Consult with Bindhu</span>
+  </button>
+
+  <!-- JavaScript Module Bootstrap -->
+  <script type="module" src="assets/js/main.js"></script>
+</body>
+</html>
