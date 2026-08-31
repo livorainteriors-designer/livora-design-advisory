@@ -21,3 +21,4 @@ dist/
 
 # Large media files
 *.mp4
+.env

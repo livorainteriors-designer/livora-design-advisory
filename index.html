@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -254,6 +255,10 @@
         <h2 class="heading-section">What Clients Say</h2>
       </div>
 
+      <div style="text-align: right; margin-bottom: 2rem;">
+        <button class="btn btn-outline" id="open-review-modal-btn">Write a Review</button>
+      </div>
+
       <div class="values-grid" id="testimonials-grid">
         <!-- Rendered dynamically by HomePage.js -->
       </div>
@@ -366,5 +371,54 @@
 
   <!-- JavaScript Module Bootstrap -->
   <script type="module" src="assets/js/main.js"></script>
+  <!-- Review Modal -->
+  <div id="review-modal" class="modal-overlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 9999; align-items: center; justify-content: center; backdrop-filter: blur(4px);">
+    <div class="modal-content animate-slide-up" style="background: white; padding: 2.5rem; width: 90%; max-width: 500px; max-height: 90vh; overflow-y: auto; position: relative;">
+      <button id="close-review-modal" style="position: absolute; top: 1rem; right: 1rem; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--color-text-muted);">&times;</button>
+      <h3 style="font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 1.5rem; font-weight: 400; color: var(--color-primary);">Write a Review</h3>
+      
+      <div id="review-success-msg" style="display: none; padding: 1rem; background: #f0fdf4; color: #166534; border: 1px solid #bbf7d0; margin-bottom: 1.5rem; font-size: 0.9rem;">
+        Thank you! Your review has been submitted successfully.
+      </div>
+      <div id="review-error-msg" style="display: none; padding: 1rem; background: #fef2f2; color: #991b1b; border: 1px solid #fecaca; margin-bottom: 1.5rem; font-size: 0.9rem;"></div>
+
+      <form id="review-form">
+        <div class="form-group" style="margin-bottom: 1.25rem;">
+          <label style="display: block; margin-bottom: 0.5rem; font-size: 0.85rem; color: var(--color-text-secondary); text-transform: uppercase; letter-spacing: 0.05em;">Your Name</label>
+          <input type="text" id="review-name" required style="width: 100%; padding: 0.75rem; border: 1px solid #e2e8f0; border-radius: 0; font-family: inherit; font-size: 0.95rem; box-sizing: border-box;" placeholder="e.g. Jane Doe">
+        </div>
+
+        <div class="form-group" style="margin-bottom: 1.25rem;">
+          <label style="display: block; margin-bottom: 0.5rem; font-size: 0.85rem; color: var(--color-text-secondary); text-transform: uppercase; letter-spacing: 0.05em;">Service Type</label>
+          <select id="review-service" required style="width: 100%; padding: 0.75rem; border: 1px solid #e2e8f0; border-radius: 0; font-family: inherit; font-size: 0.95rem; box-sizing: border-box; background: white;">
+            <option value="" disabled selected>Select a service</option>
+            <option value="Design Advisory">Design Advisory</option>
+            <option value="Full Residential Interior">Full Residential Interior</option>
+            <option value="Executive Cabin & Office Suite">Executive Cabin & Office Suite</option>
+            <option value="Architectural Visualisation">Architectural Visualisation</option>
+          </select>
+        </div>
+
+        <div class="form-group" style="margin-bottom: 1.25rem;">
+          <label style="display: block; margin-bottom: 0.5rem; font-size: 0.85rem; color: var(--color-text-secondary); text-transform: uppercase; letter-spacing: 0.05em;">Rating</label>
+          <div id="star-rating" style="display: flex; gap: 0.25rem; font-size: 1.75rem; cursor: pointer; color: #e2e8f0;">
+            <span data-value="1">★</span>
+            <span data-value="2">★</span>
+            <span data-value="3">★</span>
+            <span data-value="4">★</span>
+            <span data-value="5">★</span>
+          </div>
+          <input type="hidden" id="review-rating" required>
+        </div>
+
+        <div class="form-group" style="margin-bottom: 1.5rem;">
+          <label style="display: block; margin-bottom: 0.5rem; font-size: 0.85rem; color: var(--color-text-secondary); text-transform: uppercase; letter-spacing: 0.05em;">Your Review</label>
+          <textarea id="review-text" required rows="4" style="width: 100%; padding: 0.75rem; border: 1px solid #e2e8f0; border-radius: 0; font-family: inherit; font-size: 0.95rem; box-sizing: border-box; resize: vertical;" placeholder="Tell us about your experience..."></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width: 100%;" id="submit-review-btn">Submit Review</button>
+      </form>
+    </div>
+  </div>
 </body>
 </html>
