@@ -31,7 +31,7 @@ export const companyData = {
     email: "livorainteriors.co@gmail.com",
     instagram: "livorainteriors.co",
     instagramUrl: "https://instagram.com/livorainteriors.co",
-    whatsappNumber: "+919876543210",
+    whatsappNumber: "",
     whatsappDisplay: "+91 (Direct WhatsApp)",
     whatsappMessage: "Hi Bindhu! I visited Livora Interiors website and would like to discuss an interior design project / freelance advisory session.",
     workingHours: "Mon - Sat: 9:30 AM - 7:00 PM IST",

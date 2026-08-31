@@ -39,7 +39,7 @@ export class ConsultationModal {
             </div>
             <div class="form-group">
               <label class="form-label" for="modal-client-phone">Phone / WhatsApp *</label>
-              <input type="tel" id="modal-client-phone" class="form-input" placeholder="e.g. +91 98765 43210" required />
+              <input type="tel" id="modal-client-phone" class="form-input" placeholder="e.g. +91 00000 00000" required />
             </div>
           </div>
 

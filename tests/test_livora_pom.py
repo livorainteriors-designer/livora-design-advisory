@@ -64,7 +64,7 @@ def test_contact_page_and_inquiry_api_pom(client):
     payload = {
         "name": "Sarah Jenkins",
         "email": "sarah@example.com",
-        "phone": "+919876543210",
+        "phone": "+910000000000",
         "service": "Freelance Design Advisory",
         "timeline": "1 - 2 Months",
         "notes": "Looking for luxury living room and master suite spatial advisory."
