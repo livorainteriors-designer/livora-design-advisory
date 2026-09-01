@@ -192,6 +192,52 @@ def delete_review(review_id):
     return jsonify({"success": True})
 
 
+import cloudinary
+import cloudinary.uploader
+
+# Cloudinary is configured via the CLOUDINARY_URL environment variable automatically by the cloudinary package
+
+@app.route("/api/images", methods=["POST"])
+def upload_image():
+    if not session.get("is_admin"):
+        return jsonify({"success": False, "error": "Unauthorized"}), 401
+
+    if 'file' not in request.files:
+        return jsonify({"success": False, "error": "No file part"}), 400
+        
+    file = request.files['file']
+    description = request.form.get("description", "")
+    
+    if file.filename == '':
+        return jsonify({"success": False, "error": "No selected file"}), 400
+
+    try:
+        # Upload to Cloudinary
+        upload_result = cloudinary.uploader.upload(file)
+        url = upload_result.get('secure_url')
+        
+        # Save to Neon DB
+        new_image = Image(url=url, description=description)
+        db.session.add(new_image)
+        db.session.commit()
+        
+        return jsonify({"success": True, "image": new_image.to_dict()}), 201
+    except Exception as e:
+        return jsonify({"success": False, "error": str(e)}), 500
+
+@app.route("/api/images/<int:image_id>", methods=["DELETE"])
+def delete_image(image_id):
+    if not session.get("is_admin"):
+        return jsonify({"success": False, "error": "Unauthorized"}), 401
+        
+    image = Image.query.get(image_id)
+    if not image:
+        return jsonify({"success": False, "error": "Image not found"}), 404
+        
+    db.session.delete(image)
+    db.session.commit()
+    return jsonify({"success": True})
+
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
     print(f"Livora Interiors Python server running on http://localhost:{port}")
