@@ -38,7 +38,7 @@ export class ConsultationModal {
               <input type="text" id="modal-client-name" class="form-input" placeholder="e.g. Sarah Jenkins" required />
             </div>
             <div class="form-group">
-              <label class="form-label" for="modal-client-phone">Phone / WhatsApp *</label>
+              <label class="form-label" for="modal-client-phone">Phone *</label>
               <input type="tel" id="modal-client-phone" class="form-input" placeholder="e.g. +91 00000 00000" required />
             </div>
           </div>
@@ -76,11 +76,8 @@ export class ConsultationModal {
           </div>
 
           <div style="display: flex; gap: 1rem; margin-top: 1.5rem; flex-wrap: wrap;">
-            <button type="submit" class="btn btn-gold" style="flex: 1;">
+            <button type="submit" class="btn btn-gold" style="width: 100%;">
               <span>Send Inquiry via Email</span>
-            </button>
-            <button type="button" id="modal-whatsapp-btn" class="btn btn-primary" style="flex: 1; background-color: #25D366; border-color: #25D366; color: #FFFFFF;">
-              <span>💬 Direct WhatsApp</span>
             </button>
           </div>
         </form>
@@ -98,9 +95,6 @@ export class ConsultationModal {
 
     const form = this.modal.querySelector('#consultation-form');
     form.addEventListener('submit', (e) => this.handleEmailSubmit(e));
-
-    const waBtn = this.modal.querySelector('#modal-whatsapp-btn');
-    waBtn.addEventListener('click', () => this.handleWhatsAppDirect());
   }
 
   bindTriggers() {
@@ -132,25 +126,6 @@ export class ConsultationModal {
       timeline: document.querySelector('#modal-project-timeline')?.value || '1 - 2 Months',
       notes: document.querySelector('#modal-project-notes')?.value.trim() || 'No specific notes added.'
     };
-  }
-
-  handleWhatsAppDirect() {
-    const data = this.getFormData();
-    const formattedMsg = `*New Interior Inquiry - Livora Interiors*\n\n` +
-      `👤 *Name:* ${data.name}\n` +
-      `📞 *Phone:* ${data.phone || 'Provided via chat'}\n` +
-      `✉️ *Email:* ${data.email || 'Provided via chat'}\n` +
-      `🏛️ *Service:* ${data.service}\n` +
-      `⏱️ *Timeline:* ${data.timeline}\n` +
-      `📝 *Notes:* ${data.notes}\n\n` +
-      `_Connecting with Bindhu for Freelance Design & Advisory_`;
-
-    const encoded = encodeURIComponent(formattedMsg);
-    const waUrl = `https://api.whatsapp.com/send?phone=${companyData.contact.whatsappNumber.replace(/[^0-9]/g, '')}&text=${encoded}`;
-    
-    window.open(waUrl, '_blank');
-    ToastNotification.show("Opening direct WhatsApp chat with Bindhu...");
-    this.close();
   }
 
   handleEmailSubmit(e) {

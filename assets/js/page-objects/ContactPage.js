@@ -12,11 +12,10 @@ export class ContactPage {
 
   init() {
     this.bindForm();
-    this.bindWhatsAppButtons();
   }
 
   bindForm() {
-    const form = document.querySelector('#main-contact-form');
+    const form = document.querySelector('#contact-page-form') || document.querySelector('#main-contact-form');
     if (!form) return;
 
     form.addEventListener('submit', (e) => {
@@ -43,21 +42,6 @@ export class ContactPage {
 
       window.location.href = `mailto:${companyData.contact.email}?subject=${subject}&body=${body}`;
       ToastNotification.show("Inquiry generated! Opening your email client to send to Bindhu...");
-    });
-  }
-
-  bindWhatsAppButtons() {
-    const directBtn = document.querySelector('#contact-page-wa-btn');
-    if (!directBtn) return;
-
-    directBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      const msg = encodeURIComponent(
-        `Hi Bindhu! I visited Livora Interiors and would like to inquire about your Freelance Interior Design & Advisory services.`
-      );
-      const url = `https://api.whatsapp.com/send?phone=${companyData.contact.whatsappNumber.replace(/[^0-9]/g, '')}&text=${msg}`;
-      window.open(url, '_blank');
-      ToastNotification.show("Connecting to Bindhu on WhatsApp...");
     });
   }
 }
