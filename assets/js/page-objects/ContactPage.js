@@ -23,7 +23,6 @@ export class ContactPage {
 
       const name = document.querySelector('#contact-name')?.value.trim();
       const email = document.querySelector('#contact-email')?.value.trim();
-      const phone = document.querySelector('#contact-phone')?.value.trim();
       const service = document.querySelector('#contact-service')?.value;
       const budget = document.querySelector('#contact-budget')?.value;
       const message = document.querySelector('#contact-message')?.value.trim();
@@ -33,7 +32,6 @@ export class ContactPage {
         `Hello Bindhu,\n\nI would like to discuss a project / freelance design advisory with Livora Interiors.\n\n` +
         `Name: ${name}\n` +
         `Email: ${email}\n` +
-        `Phone: ${phone}\n` +
         `Selected Service: ${service}\n` +
         `Budget Range: ${budget}\n\n` +
         `Project Notes:\n${message}\n\n` +

@@ -32,15 +32,9 @@ export class ConsultationModal {
         </p>
 
         <form id="consultation-form">
-          <div class="form-row-2">
-            <div class="form-group">
-              <label class="form-label" for="modal-client-name">Your Full Name *</label>
-              <input type="text" id="modal-client-name" class="form-input" placeholder="e.g. Sarah Jenkins" required />
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="modal-client-phone">Phone *</label>
-              <input type="tel" id="modal-client-phone" class="form-input" placeholder="e.g. +91 00000 00000" required />
-            </div>
+          <div class="form-group">
+            <label class="form-label" for="modal-client-name">Your Full Name *</label>
+            <input type="text" id="modal-client-name" class="form-input" placeholder="e.g. Sarah Jenkins" required />
           </div>
 
           <div class="form-group">
@@ -75,10 +69,13 @@ export class ConsultationModal {
             <textarea id="modal-project-notes" class="form-textarea" rows="3" placeholder="Tell Bindhu about your home/space, square footage, design style, or specific requirements..."></textarea>
           </div>
 
-          <div style="display: flex; gap: 1rem; margin-top: 1.5rem; flex-wrap: wrap;">
+          <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-top: 1.5rem;">
             <button type="submit" class="btn btn-gold" style="width: 100%;">
               <span>Send Inquiry via Email</span>
             </button>
+            <a href="https://instagram.com/livorainteriors.co" target="_blank" rel="noopener" class="btn btn-primary" style="width: 100%; text-align: center; text-decoration: none; background: #fafafa; color: #1a1a1a; border-color: #ddd;">
+              <span>Message on Instagram Instead</span>
+            </a>
           </div>
         </form>
       </div>
@@ -120,7 +117,6 @@ export class ConsultationModal {
   getFormData() {
     return {
       name: document.querySelector('#modal-client-name')?.value.trim() || 'Client',
-      phone: document.querySelector('#modal-client-phone')?.value.trim() || '',
       email: document.querySelector('#modal-client-email')?.value.trim() || '',
       service: document.querySelector('#modal-service-type')?.value || 'Freelance Design Advisory',
       timeline: document.querySelector('#modal-project-timeline')?.value || '1 - 2 Months',
@@ -137,7 +133,6 @@ export class ConsultationModal {
     const body = encodeURIComponent(
       `Hello Bindhu,\n\nI would like to consult with you for interior design / freelance advisory.\n\n` +
       `Name: ${data.name}\n` +
-      `Phone: ${data.phone}\n` +
       `Email: ${data.email}\n` +
       `Service: ${data.service}\n` +
       `Timeline: ${data.timeline}\n\n` +
