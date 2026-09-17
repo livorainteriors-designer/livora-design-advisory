@@ -98,6 +98,13 @@ def about():
 def contact():
     return send_from_directory(BASE_DIR, "contact.html")
 
+@app.route("/robots.txt")
+def robots():
+    return send_from_directory(BASE_DIR, "robots.txt", mimetype='text/plain')
+
+@app.route("/sitemap.xml")
+def sitemap():
+    return send_from_directory(BASE_DIR, "sitemap.xml", mimetype='application/xml')
 
 # ==========================================
 # Admin Routes
