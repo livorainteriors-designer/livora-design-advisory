@@ -43,7 +43,7 @@ export const projectsData = [
     gallery: ["https://res.cloudinary.com/sr2xqwbr/image/upload/v1788235518/4.png", "https://res.cloudinary.com/sr2xqwbr/image/upload/v1788235517/5.png", "https://res.cloudinary.com/sr2xqwbr/image/upload/v1788235520/6.png", "https://res.cloudinary.com/sr2xqwbr/image/upload/v1788235546/7.png"],
     year: "2024",
     location: "Urban Penthouse",
-    clientType: "Full Interior Architecture",
+    clientType: "Full Interior Design",
     description: "Sculptural archways and plaster wall finishes create a calm, gallery-like entrance transition into the formal lounge.",
     highlights: ["Microcement Floor Coating", "Architectural Niches", "Organic Stone Pedestals"]
   },

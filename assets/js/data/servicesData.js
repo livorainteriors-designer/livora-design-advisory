@@ -42,7 +42,7 @@ export const servicesData = [
   {
     id: "full-residential",
     badge: "Bespoke End-to-End",
-    title: "Full-Scope Residential Interior Architecture",
+    title: "Full-Scope Residential Interior Design",
     tagline: "Turnkey Luxury for Villas, Penthouses & Apartments",
     description: "A complete interior design service from blank canvas to final cushion placement. We curate bespoke furniture, custom cabinetry, bespoke lighting fixtures, and artisanal textures.",
     features: [

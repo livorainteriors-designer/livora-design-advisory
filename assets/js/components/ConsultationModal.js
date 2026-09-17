@@ -28,7 +28,7 @@ export class ConsultationModal {
         <span class="subheading-editorial">Begin Your Journey</span>
         <h2 style="font-size: 1.85rem; margin-bottom: 0.5rem;">Book a Design Consultation</h2>
         <p style="font-size: 0.9rem; color: var(--color-text-secondary); margin-bottom: 1.75rem;">
-          Connect directly with <strong>Bindhu</strong> for freelance interior architecture, 3D visualization, or strategic spatial advisory.
+          Connect directly with <strong>Bindhu</strong> for freelance interior design, 3D visualization, or strategic spatial advisory.
         </p>
 
         <form id="consultation-form">
